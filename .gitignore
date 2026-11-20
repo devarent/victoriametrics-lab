@@ -1,0 +1,21 @@
+# Local data and secrets
+.env
+.env.*
+data/
+*.log
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Java
+target/
+out/
+lib/
+
+# Local database volumes
+*.db
+*.sqlite

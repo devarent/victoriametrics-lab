@@ -1,0 +1,17 @@
+services:
+  victoriametrics:
+    image: victoriametrics/victoria-metrics:v1.156.0
+    container_name: victoriametrics-lab
+    restart: unless-stopped
+    command:
+      - "-storageDataPath=/victoria-metrics-data"
+      - "-retentionPeriod=1d"
+      - "-httpListenAddr=:8428"
+      - "-search.latencyOffset=0"
+    ports:
+      - "127.0.0.1:8428:8428"
+    volumes:
+      - vm-data:/victoria-metrics-data
+
+volumes:
+  vm-data:
