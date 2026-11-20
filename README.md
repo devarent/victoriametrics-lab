@@ -58,6 +58,7 @@ open http://localhost:8428/vmui
 
 - This is the single-node VictoriaMetrics server, not the cluster version.
 - Retention is set to one day so the lab volume stays small.
+- VictoriaMetrics indexes imported samples asynchronously; `01_import.sh` waits ten seconds before the first query.
 - `-search.latencyOffset=0` makes freshly imported samples visible immediately; production deployments often keep the default to avoid partial data.
 - The import endpoint accepts the Prometheus text exposition format.
 - PromQL compatibility is broad but not identical to Prometheus; check the upstream docs for edge cases.
